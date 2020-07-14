@@ -54,18 +54,23 @@ class KeyPresser():
 #         time.sleep(1)
 
 if __name__ == '__main__':
-    kps = [KeyPresser(num=97, interval=1),  # 1
-           KeyPresser(num=98, interval=2),  # 2
-           KeyPresser(num=99, interval=3),  # 3
-           KeyPresser(num=100, interval=4),  # 4
+    kps = [KeyPresser(num=49, interval=2),  # 1
+           KeyPresser(num=50, interval=3),  # 2
+           KeyPresser(num=51, interval=2),  # 3
+           #    KeyPresser(num=52, interval=4),  # 4
            ]
 
-    input('Press enter to start')
-    for kp in kps:
-        kp.start_pressing()
-        time.sleep(0.5)
+    while True:
+        input('Press enter to start')
+        for kp in kps:
+            kp.start_pressing()
+            time.sleep(0.2)
 
-    input('Press enter to stop')
-    for kp in kps:
-        kp.stop_pressing()
+        c = input('Press enter to stop')
+        for kp in kps:
+            kp.stop_pressing()
+
+        if 'q' in c:
+            break
+
     print('Done.')
